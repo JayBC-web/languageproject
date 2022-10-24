@@ -1,8 +1,6 @@
 // reactstrap
 import { Col, Dropdown, DropdownMenu, DropdownToggle, Row } from "reactstrap";
 import React, { useState } from "react";
-// Redux Store
-import { showRightSidebarAction, toggleLeftmenu } from "../../store/actions";
 
 // Import menuDropdown
 import LanguageDropdown from "../CommonForBoth/TopbarDropdown/LanguageDropdown";
@@ -23,6 +21,8 @@ import logoLightSvg from "../../assets/images/logo-light.svg";
 import mail_chimp from "../../assets/images/brands/mail_chimp.png";
 import megamenuImg from "../../assets/images/megamenu-img.png";
 import slack from "../../assets/images/brands/slack.png";
+// Redux Store
+import { toggleLeftmenu } from "../../store/actions";
 //i18n
 import { withTranslation } from "react-i18next";
 
@@ -378,18 +378,16 @@ const Header = props => {
 
 Header.propTypes = {
   leftMenu: PropTypes.any,
-  showRightSidebar: PropTypes.any,
   showRightSidebarAction: PropTypes.func,
   t: PropTypes.any,
   toggleLeftmenu: PropTypes.func
 };
 
 const mapStatetoProps = state => {
-  const { layoutType, showRightSidebar, leftMenu } = state.Layout;
-  return { layoutType, showRightSidebar, leftMenu };
+  const { layoutType,  leftMenu } = state.Layout;
+  return { layoutType, leftMenu };
 };
 
 export default connect(mapStatetoProps, {
-  showRightSidebarAction,
   toggleLeftmenu,
 })(withTranslation()(Header));

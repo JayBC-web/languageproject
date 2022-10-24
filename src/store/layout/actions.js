@@ -1,15 +1,13 @@
 import {
   CHANGE_LAYOUT,
+  CHANGE_LAYOUT_MODE,
   CHANGE_LAYOUT_WIDTH,
+  CHANGE_PRELOADER,
   CHANGE_SIDEBAR_THEME,
   CHANGE_SIDEBAR_THEME_IMAGE,
   CHANGE_SIDEBAR_TYPE,
   CHANGE_TOPBAR_THEME,
-  SHOW_RIGHT_SIDEBAR,
-  SHOW_SIDEBAR,
-  CHANGE_PRELOADER,
-  TOGGLE_LEFTMENU,
-  CHANGE_LAYOUT_MODE
+  TOGGLE_LEFTMENU
 } from "./actionTypes"
 
 export const changeLayout = layout => ({
@@ -52,16 +50,6 @@ export const changeSidebarType = (sidebarType, isMobile) => {
 export const changeTopbarTheme = topbarTheme => ({
   type: CHANGE_TOPBAR_THEME,
   payload: topbarTheme,
-})
-
-export const showRightSidebarAction = isopen => ({
-  type: SHOW_RIGHT_SIDEBAR,
-  payload: isopen,
-})
-
-export const showSidebar = isopen => ({
-  type: SHOW_SIDEBAR,
-  payload: isopen,
 })
 
 export const toggleLeftmenu = isopen => ({

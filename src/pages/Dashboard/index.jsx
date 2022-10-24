@@ -27,7 +27,56 @@ import img5 from "../../assets/images/small/img-9.jpg";
 //i18n
 import { withTranslation } from "react-i18next";
 
-//redux
+const userData = [
+  {
+    id: 1,
+    name: "Jack Conroy",
+    location: "Valencia, Spain",
+    photo:
+      "https://cdn.dxomark.com/wp-content/uploads/medias/post-46226/DynamicRange_SamsungGalaxyS10Plus.jpg",
+    speaks: "English",
+    learning: "Spanish",
+    intro:
+      "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
+    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+  },
+  {
+    id: 2,
+    name: "Peter Malone",
+    location: "Valencia, Spain",
+    photo:
+      "https://1.bp.blogspot.com/-D99PcGnLP9M/XrkaSWSHVFI/AAAAAAAAG_E/7T7NhJ3IuOIO3tXcwCnty9MmlD3DwQ1TgCEwYBhgL/s1600/handsome-young-bearded-man-beautiful-face-car-selfie.jpg",
+    speaks: "English",
+    learning: "Spanish",
+    intro:
+      "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
+    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+  },
+  {
+    id: 3,
+    name: "Ed Newbould",
+    photo:
+      "https://www.boredpanda.com/blog/wp-content/uploads/2021/01/This-guy-took-selfies-every-day-for-ten-years-and-put-them-together-in-an-impressive-time-lapse-5ff2e75fc9c9e__700.jpg",
+    location: "Valencia, Spain",
+    speaks: "English",
+    learning: "Spanish",
+    intro:
+      "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
+    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+  },
+  {
+    id: 4,
+    name: "Rafique Samuels",
+    location: "Valencia, Spain",
+    photo:
+      "https://i.pinimg.com/originals/e5/18/eb/e518eb72f8b9b0726fe97cc798876f1e.jpg",
+    speaks: "English",
+    learning: "Spanish",
+    intro:
+      "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
+    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+  },
+];
 
 const Dashboard = (props) => {
   //meta title
@@ -49,7 +98,8 @@ const Dashboard = (props) => {
                 <CardBody>
                   <CardTitle>DuoLearn Community</CardTitle>
                   <CardSubtitle className="font-14 text-muted">
-                  Speak With Confidence and connect with other users around the world.
+                    Speak With Confidence and connect with other users around
+                    the world.
                   </CardSubtitle>
                 </CardBody>
                 <CardImg className="img-fluid" src={img4} alt="DuoLearn" />
@@ -102,421 +152,50 @@ const Dashboard = (props) => {
               </Row>
               <Row>
                 <Col lg="12">
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg src={img5} alt="DuoLearn" />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg
-                            src="https://i.pinimg.com/736x/d1/bf/95/d1bf957f92158764cc8798f561ddb097.jpg"
-                            alt="DuoLearn"
-                          />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg
-                            src="https://cdn.shopify.com/s/files/1/0618/8873/files/plumpit_50003419_421979281872953_3629285326815917646_n.jpg?v=1552312678"
-                            alt="DuoLearn"
-                          />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Kaira Cohen</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5LxH_u9MPJGWkKGzmgNr3kaXoBnM1OTinZg&usqp=CAU"
-                            alt="DuoLearn"
-                          />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg
-                            src="https://i.pinimg.com/736x/d1/bf/95/d1bf957f92158764cc8798f561ddb097.jpg"
-                            alt="DuoLearn"
-                          />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg src={img5} alt="DuoLearn" />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg
-                            src="https://as1.ftcdn.net/v2/jpg/02/74/77/88/500_F_274778800_m6SznxQuELSUfXHGqIsTXq1FNNCnY88B.jpg"
-                            alt="DuoLearn"
-                          />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg src={img5} alt="DuoLearn" />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg src={img5} alt="DuoLearn" />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
-                  <Card>
-                    <CardBody>
-                      <Row>
-                        <Col xs="6" sm="3">
-                          <CardImg src={img5} alt="DuoLearn" />
-                        </Col>
-                        <Col xs="12" sm="9">
-                          <CardTitle>
-                            <h4>Alex Turner</h4>
-                          </CardTitle>
-                          <CardSubtitle className="mb-2">
-                            <strong>Speaks:</strong>{" "}
-                            <Badge color="primary" className="me-1">
-                              English
-                            </Badge>
-                            {"    "}
-                            <strong>Learning:</strong>{" "}
-                            <Badge color="info" className="me-1">
-                              Spanish
-                            </Badge>
-                          </CardSubtitle>
-                          <CardText>
-                            Professionally, I am twice retired. Initially, I
-                            worked for a major US insurance carrier for over 20
-                            years. Starting as a sales agent of insurance and
-                            financial instruments and retiring as the General
-                            Manager for the State of Vermont.
-                          </CardText>
-                          <button type="button" className="btn btn-dark me-2">
-                            <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
-                            Follow
-                          </button>
-                          <button type="button" className="btn btn-info me-2">
-                            <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
-                            Send Message
-                          </button>
-                        </Col>
-                      </Row>
-                    </CardBody>
-                  </Card>
+                  {userData.map((user) => (
+                      <Card key={user.id}>
+                        <CardBody>
+                          <Row>
+                            <Col xs="12" sm="3">
+                              <CardImg src={user.photo} alt="DuoLearn"/>
+                            </Col>
+                            <Col xs="12" sm="9">
+                              <CardTitle>
+                                <h4>{user.name}</h4>
+                              </CardTitle>
+                              <CardSubtitle className="mb-2">
+                                <strong>Speaks:</strong>{" "}
+                                <Badge color="primary" className="me-1">
+                                 {user.speaks}
+                                </Badge>
+                                {"    "}
+                                <strong>Learning:</strong>{" "}
+                                <Badge color="info" className="me-1">
+                                  {user.learning}
+                                </Badge>
+                              </CardSubtitle>
+                              <CardText>
+                               {user.intro}
+                              </CardText>
+                              <button
+                                type="button"
+                                className="btn btn-dark me-2"
+                              >
+                                <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
+                                Follow
+                              </button>
+                              <button
+                                type="button"
+                                className="btn btn-info me-2"
+                              >
+                                <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
+                                Send Message
+                              </button>
+                            </Col>
+                          </Row>
+                        </CardBody>
+                      </Card>
+                    ))}
                 </Col>
               </Row>
               <Row>

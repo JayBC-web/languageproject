@@ -1,162 +1,114 @@
-import React, { useState, useEffect } from "react";
 import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Alert,
-  CardBody,
+  Badge,
   Button,
-  Label,
-  Input,
-  FormFeedback,
+  Card,
+  CardBody,
+  Col,
+  Container,
   Form,
+  Input,
+  Label,
+  Row,
 } from "reactstrap";
-
-// Formik Validation
-import * as Yup from "yup";
-import { useFormik } from "formik";
-
-//redux
-import { useSelector, useDispatch } from "react-redux";
-
-import { withRouter } from "react-router-dom";
 
 //Import Breadcrumb
 import Breadcrumb from "../../components/Common/Breadcrumb";
-
+import React from "react";
 import avatar from "../../assets/images/users/avatar-1.jpg";
-// actions
-import { editProfile, resetProfileFlag } from "../../store/actions";
+import { withRouter } from "react-router-dom";
 
 const UserProfile = (props) => {
-
   //meta title
-  document.title = "Profile | Skote - React Admin & Dashboard Template";
-
-  const dispatch = useDispatch();
-
-  const [email, setemail] = useState("");
-  const [name, setname] = useState("");
-  const [idx, setidx] = useState(1);
-
-  const { error, success } = useSelector(state => ({
-    error: state.Profile.error,
-    success: state.Profile.success,
-  }));
-  useEffect(() => {
-    if (localStorage.getItem("authUser")) {
-      const obj = JSON.parse(localStorage.getItem("authUser"));
-      if (import.meta.env.VITE_APP_DEFAULTAUTH === "firebase") {
-        console.log("hh", import.meta.env.VITE_APP_DEFAULTAUTH)
-        setname(obj.displayName);
-        setemail(obj.email);
-        setidx(obj.uid);
-      } else if (
-        import.meta.env.VITE_APP_DEFAULTAUTH === "fake" ||
-        import.meta.env.VITE_APP_DEFAULTAUTH === "jwt"
-      ) {
-        setname(obj.username);
-        setemail(obj.email);
-        setidx(obj.uid);
-      }
-      setTimeout(() => {
-        dispatch(resetProfileFlag());
-      }, 3000);
-    }
-  }, [dispatch, success]);
-
-  const validation = useFormik({
-    // enableReinitialize : use this flag when initial values needs to be changed
-    enableReinitialize: true,
-
-    initialValues: {
-      username: name || '',
-      idx: idx || '',
-    },
-    validationSchema: Yup.object({
-      username: Yup.string().required("Please Enter Your UserName"),
-    }),
-    onSubmit: (values) => {
-      dispatch(editProfile(values));
-    }
-  });
+  document.title = "DuoLearn | Profile - Learn language through conversation";
 
   return (
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumb title="Skote" breadcrumbItem="Profile" />
-
+          <Breadcrumb title="DuoLearn" breadcrumbItem="@USENAME'S Profile" />
           <Row>
-            <Col lg="12">
-              {error && error ? <Alert color="danger">{error}</Alert> : null}
-              {success ? <Alert color="success">{success}</Alert> : null}
-
+            <Col xs="12" sm="4" lg="3">
               <Card>
                 <CardBody>
-                  <div className="d-flex">
-                    <div className="ms-3">
-                      <img
-                        src={avatar}
-                        alt=""
-                        className="avatar-md rounded-circle img-thumbnail"
-                      />
-                    </div>
-                    <div className="flex-grow-1 align-self-center">
-                      <div className="text-muted">
-                        <h5>{name}</h5>
-                        <p className="mb-1">{email}</p>
-                        <p className="mb-0">Id no: #{idx}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <Row className="justify-content-center">
+                    <img
+                      src={avatar}
+                      alt="user profile picture"
+                      className="img-fluid. max-width: 150px;"
+                    />
+                  </Row>
                 </CardBody>
               </Card>
             </Col>
+            <Col xs="12" sm="8" lg="9">
+              <Row>
+                <Card>
+                  <CardBody>
+                    <Row>
+                      <Col sx="12" sm="9">
+                        <div className="flex-grow-1 align-self-center mb-3">
+                          <div>
+                            <h3>Jack Conroy, 30</h3>
+                            <p className="mb-2" style={{fontSize: "0.9rem"}}>
+                              <i className="bx bx-map bx-border-circle"/> Valencia, Spain
+                            </p>
+                            <p className="mb-0" style={{fontSize: "0.9rem"}}>
+                              Speaks:{" "}
+                              <Badge color="primary" className="me-1">
+                                English
+                              </Badge>{" "}
+                            </p>
+                            <p className="mb-0" style={{fontSize: "0.9rem"}}>
+                              {" "}
+                              Learning:{" "}
+                              <Badge color="info" className="me-1">
+                                Spanish
+                              </Badge>
+                            </p>
+                          </div>
+                        </div>
+                        <button type="button" className="btn btn-dark me-2">
+                          <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
+                          Follow
+                        </button>
+                        <button type="button" className="btn btn-info me-2">
+                          <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
+                          Send Message
+                        </button>
+                      </Col>
+                    </Row>
+                  </CardBody>
+                </Card>
+              </Row>
+              <Row>
+                <Card>
+                  <CardBody>
+                    <Row className="justify-content-center">
+                      <Col>
+                        <h4>About me!</h4>
+                        <p>
+                          Hello. I’m a lawyer and I live in Brazil. I Would like
+                          to find people to practice english and Czech. I want
+                          to talk about travel, hobbies, food, culture, etc. If
+                          you want to practise your English and talk about
+                          interesting things, feel free to send{" "}
+                        </p>
+                        <h4>Hobbies and Interests</h4>
+                        <p style={{fontSize: "1.2rem"}}>
+                          <Badge color="light">Sports</Badge>{" "}
+                          <Badge color="light">Travelling</Badge>{" "}
+                          <Badge color="light">Chess</Badge>{" "}
+                          <Badge color="light">Guitar</Badge>{" "}
+                          <Badge color="light">Violin</Badge>{" "}
+                        </p>
+                      </Col>
+                    </Row>
+                  </CardBody>
+                </Card>
+              </Row>
+            </Col>
           </Row>
-
-          <h4 className="card-title mb-4">Change User Name</h4>
-
-          <Card>
-            <CardBody>
-              <Form
-                className="form-horizontal"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  validation.handleSubmit();
-                  return false;
-                }}
-              >
-                <div className="form-group">
-                  <Label className="form-label">User Name</Label>
-                  <Input
-                    name="username"
-                    // value={name}
-                    className="form-control"
-                    placeholder="Enter User Name"
-                    type="text"
-                    onChange={validation.handleChange}
-                    onBlur={validation.handleBlur}
-                    value={validation.values.username || ""}
-                    invalid={
-                      validation.touched.username && validation.errors.username ? true : false
-                    }
-                  />
-                  {validation.touched.username && validation.errors.username ? (
-                    <FormFeedback type="invalid">{validation.errors.username}</FormFeedback>
-                  ) : null}
-                  <Input name="idx" value={idx} type="hidden" />
-                </div>
-                <div className="text-center mt-4">
-                  <Button type="submit" color="danger">
-                    Update User Name
-                  </Button>
-                </div>
-              </Form>
-            </CardBody>
-          </Card>
         </Container>
       </div>
     </React.Fragment>

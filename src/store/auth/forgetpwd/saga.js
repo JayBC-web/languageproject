@@ -1,15 +1,14 @@
-import { takeEvery, fork, put, all, call } from "redux-saga/effects"
-
-// Login Redux States
-import { FORGET_PASSWORD } from "./actionTypes"
-import { userForgetPasswordSuccess, userForgetPasswordError } from "./actions"
-
-//Include Both Helper File with needed methods
-import { getFirebaseBackend } from "../../../helpers/firebase_helper"
+import { all, call, fork, put, takeEvery } from "redux-saga/effects"
 import {
   postFakeForgetPwd,
   postJwtForgetPwd,
 } from "../../../helpers/fakebackend_helper"
+import { userForgetPasswordError, userForgetPasswordSuccess } from "./actions"
+
+// Login Redux States
+import { FORGET_PASSWORD } from "./actionTypes"
+//Include Both Helper File with needed methods
+import { getFirebaseBackend } from "../../../helpers/firebase_helper"
 
 const fireBaseBackend = getFirebaseBackend()
 
@@ -21,7 +20,7 @@ function* forgetUser({ payload: { user, history } }) {
       if (response) {
         yield put(
           userForgetPasswordSuccess(
-            "Reset link are sended to your mailbox, check there first"
+            "We have sent a reset link to your email, remember to check the spam folder."
           )
         )
       }
@@ -32,7 +31,7 @@ function* forgetUser({ payload: { user, history } }) {
       if (response) {
         yield put(
           userForgetPasswordSuccess(
-            "Reset link are sended to your mailbox, check there first"
+            "We have sent a reset link to your email, remember to check the spam folder."
           )
         )
       }
@@ -43,7 +42,7 @@ function* forgetUser({ payload: { user, history } }) {
       if (response) {
         yield put(
           userForgetPasswordSuccess(
-            "Reset link are sended to your mailbox, check there first"
+            "We have sent a reset link to your email, remember to check the spam folder."
           )
         )
       }

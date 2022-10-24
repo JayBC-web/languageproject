@@ -4,7 +4,6 @@ import {
   changeLayout,
   changeLayoutWidth,
   changeTopbarTheme,
-  showRightSidebarAction
 } from "../../store/actions"
 //redux
 import { useDispatch, useSelector } from "react-redux"
@@ -14,7 +13,6 @@ import Header from "./Header"
 //components
 import Navbar from "./Navbar"
 import PropTypes from "prop-types"
-import RightSidebar from "../CommonForBoth/RightSidebar"
 import { withRouter } from "react-router-dom"
 
 const Layout = (props) => {
@@ -126,8 +124,6 @@ const Layout = (props) => {
         <div className="main-content">{props.children}</div>
         <Footer />
       </div>
-
-      {showRightSidebar ? <RightSidebar /> : null}
     </React.Fragment>
   );
 }
