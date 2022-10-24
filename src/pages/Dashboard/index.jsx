@@ -31,18 +31,20 @@ const userData = [
   {
     id: 1,
     name: "Jack Conroy",
-    location: "Valencia, Spain",
+    age: "23",
+    location: "Madrid, Spain",
     photo:
       "https://cdn.dxomark.com/wp-content/uploads/medias/post-46226/DynamicRange_SamsungGalaxyS10Plus.jpg",
     speaks: "English",
     learning: "Spanish",
     intro:
       "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
-    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+    hobbies: ["Running", "Flying", "Knitting", "Travelling", "Wine", "Hiking"],
   },
   {
     id: 2,
     name: "Peter Malone",
+    age: "21",
     location: "Valencia, Spain",
     photo:
       "https://1.bp.blogspot.com/-D99PcGnLP9M/XrkaSWSHVFI/AAAAAAAAG_E/7T7NhJ3IuOIO3tXcwCnty9MmlD3DwQ1TgCEwYBhgL/s1600/handsome-young-bearded-man-beautiful-face-car-selfie.jpg",
@@ -50,31 +52,33 @@ const userData = [
     learning: "Spanish",
     intro:
       "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
-    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+    hobbies: ["Music", "Festivals", "Knitting", "Travelling", "Climbing", "Hiking"],
   },
   {
     id: 3,
     name: "Ed Newbould",
+    age: "31",
     photo:
       "https://www.boredpanda.com/blog/wp-content/uploads/2021/01/This-guy-took-selfies-every-day-for-ten-years-and-put-them-together-in-an-impressive-time-lapse-5ff2e75fc9c9e__700.jpg",
-    location: "Valencia, Spain",
+    location: "Mexico City, Mexico",
     speaks: "English",
     learning: "Spanish",
     intro:
       "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
-    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+    hobbies: ["Tennis", "Climbing", "Knitting", "Travelling", "Cocktails", "Hiking"],
   },
   {
     id: 4,
     name: "Rafique Samuels",
-    location: "Valencia, Spain",
+    age: "47",
+    location: "Rome, Italy",
     photo:
       "https://i.pinimg.com/originals/e5/18/eb/e518eb72f8b9b0726fe97cc798876f1e.jpg",
     speaks: "English",
     learning: "Spanish",
     intro:
       "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
-    hobbies: ["Tennis", "", "Knitting", "Travelling", "Wine", "Hiking"],
+    hobbies: ["Swimming", "Cooking", "Knitting", "Travelling", "Bungee Jumping", "Hiking"],
   },
 ];
 
@@ -154,6 +158,7 @@ const Dashboard = (props) => {
                 <Col lg="12">
                   {userData.map((user) => (
                       <Card key={user.id}>
+                        <Link to={{ pathname: "/profile", state: { user } }} style={{ textDecoration: 'none', color: "inherit" }}>
                         <CardBody>
                           <Row>
                             <Col xs="12" sm="3">
@@ -194,6 +199,7 @@ const Dashboard = (props) => {
                             </Col>
                           </Row>
                         </CardBody>
+                        </Link>
                       </Card>
                     ))}
                 </Col>

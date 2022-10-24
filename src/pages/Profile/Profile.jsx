@@ -10,30 +10,34 @@ import {
   Label,
   Row,
 } from "reactstrap";
+import { useLocation, withRouter } from "react-router-dom";
 
-//Import Breadcrumb
 import Breadcrumb from "../../components/Common/Breadcrumb";
 import React from "react";
 import avatar from "../../assets/images/users/avatar-1.jpg";
-import { withRouter } from "react-router-dom";
 
-const UserProfile = (props) => {
+//Import Breadcrumb
+
+const Profile = () => {
   //meta title
   document.title = "DuoLearn | Profile - Learn language through conversation";
+  let data = useLocation().state.user;
+
+  console.log(data.hobbies);
 
   return (
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumb title="DuoLearn" breadcrumbItem="Your Profile" />
+          <Breadcrumb title="DuoLearn" breadcrumbItem="@USENAME'S Profile" />
           <Row>
             <Col xs="12" sm="4" lg="3">
               <Card>
                 <CardBody>
                   <Row className="justify-content-center">
                     <img
-                      src={avatar}
+                      src={data.photo}
                       alt="user profile picture"
                       className="img-fluid. max-width: 150px;"
                     />
@@ -49,33 +53,36 @@ const UserProfile = (props) => {
                       <Col sx="12" sm="9">
                         <div className="flex-grow-1 align-self-center mb-3">
                           <div>
-                            <h3>Jack Conroy, 30</h3>
-                            <p className="mb-2" style={{fontSize: "0.9rem"}}>
-                              <i className="bx bx-map bx-border-circle"/> Valencia, Spain
+                            <h3>
+                              {data.name}, {data.age}
+                            </h3>
+                            <p className="mb-2" style={{ fontSize: "0.9rem" }}>
+                              <i className="bx bx-map bx-border-circle" />{" "}
+                              {data.location}
                             </p>
-                            <p className="mb-0" style={{fontSize: "0.9rem"}}>
+                            <p className="mb-0" style={{ fontSize: "0.9rem" }}>
                               Speaks:{" "}
                               <Badge color="primary" className="me-1">
-                                English
+                                {data.speaks}
                               </Badge>{" "}
                             </p>
-                            <p className="mb-0" style={{fontSize: "0.9rem"}}>
+                            <p className="mb-0" style={{ fontSize: "0.9rem" }}>
                               {" "}
                               Learning:{" "}
                               <Badge color="info" className="me-1">
-                                Spanish
+                                {data.learning}
                               </Badge>
                             </p>
                           </div>
                         </div>
-                        {/* <button type="button" className="btn btn-dark me-2">
+                        <button type="button" className="btn btn-dark me-2">
                           <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
                           Follow
                         </button>
                         <button type="button" className="btn btn-info me-2">
                           <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
                           Send Message
-                        </button> */}
+                        </button>
                       </Col>
                     </Row>
                   </CardBody>
@@ -87,20 +94,14 @@ const UserProfile = (props) => {
                     <Row className="justify-content-center">
                       <Col>
                         <h4>About me!</h4>
-                        <p>
-                          Hello. I’m a lawyer and I live in Brazil. I Would like
-                          to find people to practice english and Czech. I want
-                          to talk about travel, hobbies, food, culture, etc. If
-                          you want to practise your English and talk about
-                          interesting things, feel free to send{" "}
-                        </p>
+                        <p>{data.intro} </p>
                         <h4>Hobbies and Interests</h4>
-                        <p style={{fontSize: "1.2rem"}}>
-                          <Badge color="light">Sports</Badge>{" "}
-                          <Badge color="light">Travelling</Badge>{" "}
-                          <Badge color="light">Chess</Badge>{" "}
-                          <Badge color="light">Guitar</Badge>{" "}
-                          <Badge color="light">Violin</Badge>{" "}
+                        <p style={{ fontSize: "1.2rem" }}>
+                          {data.hobbies.map((hobby) => 
+                            <Badge key={hobby} color="light" style={{marginRight: "0.3rem"}}>
+                              {hobby}
+                            </Badge>
+                          )}
                         </p>
                       </Col>
                     </Row>
@@ -115,4 +116,4 @@ const UserProfile = (props) => {
   );
 };
 
-export default withRouter(UserProfile);
+export default withRouter(Profile);

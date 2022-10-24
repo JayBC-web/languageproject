@@ -5,6 +5,7 @@ import ForgetPwd from "../pages/Authentication/ForgetPassword";
 // // Authentication related pages
 import Login from "../pages/Authentication/Login";
 import Logout from "../pages/Authentication/Logout";
+import Profile from "../pages/Profile/Profile";
 import React from "react";
 import { Redirect } from "react-router-dom";
 import Register from "../pages/Authentication/Register";
@@ -15,7 +16,8 @@ const authProtectedRoutes = [
   { path: "/dashboard", component: Dashboard },
 
   //   // //profile
-  { path: "/profile", component: UserProfile },
+  { path: "/my-profile", component: UserProfile },
+  { path: "/profile", component: Profile },
 
   { path: "/find-an-exchange", component: FindExchanges }, 
 
