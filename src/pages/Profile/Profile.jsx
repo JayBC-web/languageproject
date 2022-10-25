@@ -14,7 +14,6 @@ import { useLocation, withRouter } from "react-router-dom";
 
 import Breadcrumb from "../../components/Common/Breadcrumb";
 import React from "react";
-import avatar from "../../assets/images/users/avatar-1.jpg";
 
 //Import Breadcrumb
 
@@ -30,7 +29,7 @@ const Profile = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumb title="DuoLearn" breadcrumbItem="@USENAME'S Profile" />
+          <Breadcrumb title="DuoLearn" breadcrumbItem={`${data.name}'S Profile`} />
           <Row>
             <Col xs="12" sm="4" lg="3">
               <Card>
@@ -75,10 +74,15 @@ const Profile = () => {
                             </p>
                           </div>
                         </div>
-                        <button type="button" className="btn btn-dark me-2">
+
+                        <button
+                          type="button"
+                          className="btn btn-dark me-2"
+                        >
                           <i className="bx bx-user-plus font-size-16 align-middle me-2"></i>{" "}
                           Follow
                         </button>
+
                         <button type="button" className="btn btn-info me-2">
                           <i className="bx bx-send  font-size-16 align-middle me-2"></i>{" "}
                           Send Message
@@ -97,11 +101,15 @@ const Profile = () => {
                         <p>{data.intro} </p>
                         <h4>Hobbies and Interests</h4>
                         <p style={{ fontSize: "1.2rem" }}>
-                          {data.hobbies.map((hobby) => 
-                            <Badge key={hobby} color="light" style={{marginRight: "0.3rem"}}>
+                          {data.hobbies.map((hobby) => (
+                            <Badge
+                              key={hobby}
+                              color="light"
+                              style={{ marginRight: "0.3rem" }}
+                            >
                               {hobby}
                             </Badge>
-                          )}
+                          ))}
                         </p>
                       </Col>
                     </Row>

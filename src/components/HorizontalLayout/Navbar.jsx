@@ -91,10 +91,6 @@ const Navbar = (props) => {
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link  arrow-none"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setdashboard(!dashboard);
-                    }}
                     to="/dashboard"
                   >
                     <i className="bx bx-home-circle me-2"></i>
@@ -104,121 +100,24 @@ const Navbar = (props) => {
 
                 <li className="nav-item dropdown">
                   <Link
-                    to="/#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setui(!ui);
-                    }}
+                    to="/find-an-exchange"
                     className="nav-link dropdown-toggle arrow-none"
                   >
                     <i className="bx bx-world me-2"></i>
-                    {props.t("Find an Exchange")} <div className="arrow-down"></div>
+                    {props.t("Find an Exchange")}
                   </Link>
-                  <div
-                    className={classname(
-                      "dropdown-menu mega-dropdown-menu dropdown-menu-left dropdown-mega-menu-xl",
-                      { show: ui }
-                    )}
-                  >
-                    <Row>
-                      <Col lg={4}>
-                        <div>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                        </div>
-                      </Col>
-                      <Col lg={4}>
-                        <div>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                        </div>
-                      </Col>
-                      <Col lg={4}>
-                        <div>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                          <Link to="#" className="dropdown-item">
-                            {props.t("Conversation Subject")}
-                          </Link>
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
                 </li>
 
                 <li className="nav-item dropdown">
                   <Link
-                    to="/#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setapp(!app);
-                    }}
+                    to="/community"
                     className="nav-link z arrow-none"
                   >
                     <i className="bx bx-group me-2"></i>
-                    {props.t("Community")} <div className="arrow-down"></div>
+                    {props.t("Community")} 
+                    {/* <div className="arrow-down"></div> */}
                   </Link>
-                  <div className={classname("dropdown-menu", { show: app })}>
+                  {/* <div className={classname("dropdown-menu", { show: app })}>
                   <Link to="#" className="dropdown-item">
                       {props.t("My Connections")}
                     </Link>
@@ -228,22 +127,19 @@ const Navbar = (props) => {
                     <Link to="#" className="dropdown-item">
                       {props.t("Chat Groups")}
                     </Link>
-                  </div>
+                  </div> */}
                 </li>
 
                 <li className="nav-item dropdown">
                   <Link
-                    to="/#"
+                    to="/my-journey"
                     className="nav-link  arrow-none"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setcomponent(!component);
-                    }}
                   >
                     <i className="bx bx-user-pin me-2"></i>
-                    {props.t("My Journey")} <div className="arrow-down"></div>
+                    {props.t("My Journey")} 
+                    {/* <div className="arrow-down"></div> */}
                   </Link>
-                  <div
+                  {/* <div
                     className={classname("dropdown-menu", { show: component })}
                   >
                     <div className="dropdown">
@@ -295,17 +191,13 @@ const Navbar = (props) => {
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </li>
 
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link  arrow-none"
-                    to="/#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setextra(!extra);
-                    }}
+                    to="/go-live"
                   >
                     <i className="bx bx-user-voice me-2"></i>
                     {props.t("Go Live")} 

@@ -9,6 +9,7 @@ import Profile from "../pages/Profile/Profile";
 import React from "react";
 import { Redirect } from "react-router-dom";
 import Register from "../pages/Authentication/Register";
+import Settings from "../pages/Settings/Settings";
 // // Profile
 import UserProfile from "../pages/Authentication/user-profile";
 
@@ -18,6 +19,7 @@ const authProtectedRoutes = [
   //   // //profile
   { path: "/my-profile", component: UserProfile },
   { path: "/profile", component: Profile },
+  { path: "/settings", component: Settings },
 
   { path: "/find-an-exchange", component: FindExchanges }, 
 

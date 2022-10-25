@@ -64,7 +64,7 @@ const userData = [
     speaks: "English",
     learning: "Spanish",
     intro:
-      "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
+      "I look forward to applying all knowledge acquired in language learning into authentic conversations . I've been thoroughly studying English for a while so my main objective is mastering it .Currently I've commenced taking German classes so...",
     hobbies: ["Tennis", "Climbing", "Knitting", "Travelling", "Cocktails", "Hiking"],
   },
   {
@@ -77,7 +77,7 @@ const userData = [
     speaks: "English",
     learning: "Spanish",
     intro:
-      "Professionally, I am twice retired. Initially, I worked for a major US insurance carrier for over 20 years. Starting as a sales agent of insurance and financial instruments and retiring as the General Manager for the State of Vermont.",
+      "Hey! I am very much Brazilian and I'm interested in the British accent, so I would like to talk with people from the UK as I plan on moving there in a few years and in return, I'm willing to help you with Portuguese.",
     hobbies: ["Swimming", "Cooking", "Knitting", "Travelling", "Bungee Jumping", "Hiking"],
   },
 ];

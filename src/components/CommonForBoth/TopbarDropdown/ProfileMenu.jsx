@@ -67,7 +67,7 @@ const ProfileMenu = (props) => {
             <i className="bx bx-mail-send font-size-16 align-middle me-1" />
             {props.t("Messages")}
           </DropdownItem>
-          <DropdownItem tag="a" href="#">
+          <DropdownItem tag="a" href="/settings">
             <i className="bx bx-wrench font-size-16 align-middle me-1" />
             {props.t("Settings")}
           </DropdownItem>
