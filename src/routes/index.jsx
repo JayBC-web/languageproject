@@ -1,7 +1,9 @@
+import Chat from "../pages/Chat";
 // // Dashboard
 import Dashboard from "../pages/Dashboard/index";
 import FindExchanges from "../pages/FindExchanges";
 import ForgetPwd from "../pages/Authentication/ForgetPassword";
+import GroupConversations from "../pages/GroupConversations"
 // // Authentication related pages
 import Login from "../pages/Authentication/Login";
 import Logout from "../pages/Authentication/Logout";
@@ -21,7 +23,10 @@ const authProtectedRoutes = [
   { path: "/profile", component: Profile },
   { path: "/settings", component: Settings },
 
+  { path: "/chat", component: Chat },
+
   { path: "/find-an-exchange", component: FindExchanges }, 
+  { path: "/group-conversations", component: GroupConversations }, 
 
 
   //   // this route should be at the end of all other routes
