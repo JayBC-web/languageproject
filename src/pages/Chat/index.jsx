@@ -202,7 +202,7 @@ const Chat = props => {
                           </p>
                         </div>
 
-                        <div>
+                        {/* <div>
                           <Dropdown
                             isOpen={menu1}
                             toggle={() => setMenu1(!menu1)}
@@ -220,11 +220,11 @@ const Chat = props => {
                               <DropdownItem href="#">Something else</DropdownItem>
                             </DropdownMenu>
                           </Dropdown>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
 
-                    <div className="search-box chat-search-box py-4">
+                    {/* <div className="search-box chat-search-box py-4">
                       <div className="position-relative">
                         <Input
                           onKeyUp={searchUsers}
@@ -235,7 +235,7 @@ const Chat = props => {
                         />
                         <i className="bx bx-search-alt search-icon" />
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="chat-leftsidebar-nav">
                       <Nav pills justified>
@@ -265,7 +265,7 @@ const Chat = props => {
                             <span className="d-none d-sm-block">Groups</span>
                           </NavLink>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                           <NavLink
                             className={classnames({
                               active: activeTab === "3",
@@ -277,7 +277,7 @@ const Chat = props => {
                             <i className="bx bx-book-content font-size-20 d-sm-none" />
                             <span className="d-none d-sm-block">Contacts</span>
                           </NavLink>
-                        </NavItem>
+                        </NavItem> */}
                       </Nav>
                       <TabContent activeTab={activeTab} className="py-4">
                         <TabPane tabId="1">
@@ -464,7 +464,7 @@ const Chat = props => {
                         </Col>
                         <Col md="8" xs="3">
                           <ul className="list-inline user-chat-nav text-end mb-0">
-                            <li className="list-inline-item d-none d-sm-inline-block">
+                            {/* <li className="list-inline-item d-none d-sm-inline-block">
                               <Dropdown
                                 isOpen={search_Menu}
                                 toggle={toggleSearch}
@@ -483,18 +483,18 @@ const Chat = props => {
                                           className="form-control"
                                           placeholder="Search ..."
                                           aria-label="Recipient's username"
-                                        />
+                                        /> */}
                                         {/* <InputGroupAddon addonType="append"> */}
-                                        <Button color="primary" type="submit">
+                                        {/* <Button color="primary" type="submit">
                                           <i className="mdi mdi-magnify" />
-                                        </Button>
+                                        </Button> */}
                                         {/* </InputGroupAddon> */}
-                                      </InputGroup>
+                                      {/* </InputGroup>
                                     </FormGroup>
                                   </Form>
                                 </DropdownMenu>
                               </Dropdown>
-                            </li>
+                            </li> */}
                             <li className="list-inline-item  d-none d-sm-inline-block">
                               <Dropdown
                                 isOpen={settings_Menu}
@@ -612,7 +612,7 @@ const Chat = props => {
                               />
                               <div className="chat-input-links">
                                 <ul className="list-inline mb-0">
-                                  <li className="list-inline-item">
+                                  {/* <li className="list-inline-item">
                                     <Link to="#">
                                       <i
                                         className="mdi mdi-emoticon-happy-outline"
@@ -625,8 +625,8 @@ const Chat = props => {
                                         Emojis
                                       </UncontrolledTooltip>
                                     </Link>
-                                  </li>
-                                  <li className="list-inline-item">
+                                  </li> */}
+                                  {/* <li className="list-inline-item">
                                     <Link to="#">
                                       <i
                                         className="mdi mdi-file-image-outline"
@@ -639,18 +639,18 @@ const Chat = props => {
                                         Images
                                       </UncontrolledTooltip>
                                     </Link>
-                                  </li>
+                                  </li> */}
                                   <li className="list-inline-item">
                                     <Link to="#">
                                       <i
-                                        className="mdi mdi-file-document-outline"
+                                        className="bx bx-microphone"
                                         id="Filetooltip"
                                       />
                                       <UncontrolledTooltip
                                         placement="top"
                                         target="Filetooltip"
                                       >
-                                        Add Files
+                                        Audio Message
                                       </UncontrolledTooltip>
                                     </Link>
                                   </li>

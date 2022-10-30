@@ -1,4 +1,5 @@
 import {
+  CardBody,
   Col,
   Container,
   PaginationItem,
@@ -509,9 +510,9 @@ const ProjectsGrid = props => {
           <Breadcrumbs title="DuoLearn" breadcrumbItem="Group Conversations" />
 
           <Row>
-            {/* Import Cards */}
             <CardProject projects={projects} />
           </Row>
+  
 
           <Row>
             <Col lg="12">

@@ -15,15 +15,16 @@ import {
   PaginationLink,
   Row,
 } from "reactstrap";
+import React, {useState} from "react";
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Rating from "react-rating";
-import React from "react";
 import img4 from "../../assets/images/small/img-8.webp";
 import img5 from "../../assets/images/small/img-9.jpg";
+import { map } from "lodash";
 //i18n
 import { withTranslation } from "react-i18next";
 
@@ -33,6 +34,9 @@ const FindExchanges = (props) => {
   //meta title
   document.title =
     "DuoLearn | Find an Exchange - Language exchange with native speakers";
+
+    const [page, setPage] = useState(1);
+    const [totalPage] = useState(5);
 
   return (
     <React.Fragment>
@@ -520,29 +524,35 @@ const FindExchanges = (props) => {
                 </Col>
               </Row>
               <Row>
-                <Col xs="12">
-                  <Pagination
-                    aria-label="Page navigation"
-                    listClassName="justify-content-center"
-                  >
-                    <PaginationItem>
-                      <PaginationLink href="#">Previous</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink href="#">1</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink href="#">2</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink href="#">3</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink href="#">Next</PaginationLink>
-                    </PaginationItem>
-                  </Pagination>
-                </Col>
-              </Row>
+            <Col lg="12">
+              <ul className="pagination pagination-rounded justify-content-center mt-2 mb-5">
+                <PaginationItem disabled={page === 1}>
+                  <PaginationLink
+                    previous
+                    href="#"
+                    onClick={() => handlePageClick(page - 1)}
+                  />
+                </PaginationItem>
+                {map(Array(totalPage), (item, i) => (
+                  <PaginationItem active={i + 1 === page} key={i}>
+                    <PaginationLink
+                      onClick={() => handlePageClick(i + 1)}
+                      href="#"
+                    >
+                      {i + 1}
+                    </PaginationLink>
+                  </PaginationItem>
+                ))}
+                <PaginationItem disabled={page === totalPage}>
+                  <PaginationLink
+                    next
+                    href="#"
+                    onClick={() => handlePageClick(page + 1)}
+                  />
+                </PaginationItem>
+              </ul>
+            </Col>
+          </Row>
             </Col>
           </Row>
         </Container>

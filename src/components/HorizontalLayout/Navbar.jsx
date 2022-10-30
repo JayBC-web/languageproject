@@ -110,11 +110,11 @@ const Navbar = (props) => {
 
                 <li className="nav-item dropdown">
                   <Link
-                    to="/community"
+                    to="/group-conversations"
                     className="nav-link z arrow-none"
                   >
                     <i className="bx bx-group me-2"></i>
-                    {props.t("Community")} 
+                    {props.t("Group Conversations")} 
                     {/* <div className="arrow-down"></div> */}
                   </Link>
                   {/* <div className={classname("dropdown-menu", { show: app })}>
