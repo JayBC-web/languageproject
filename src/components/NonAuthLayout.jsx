@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types'
+import React from 'react';
 import { withRouter } from "react-router-dom"
 
 const NonAuthLayout = (props) => {

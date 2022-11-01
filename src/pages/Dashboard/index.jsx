@@ -166,7 +166,7 @@ const Dashboard = (props) => {
                         <CardBody>
                           <Row>
                             <Col xs="12" sm="3">
-                              <CardImg src={user.photo} alt="DuoLearn"/>
+                              <CardImg src={user.photo} alt="DuoLearn" height="200px" width="150px"/>
                             </Col>
                             <Col xs="12" sm="9">
                               <CardTitle>

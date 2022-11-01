@@ -1,12 +1,10 @@
-import PropTypes from "prop-types"
 import React, { useEffect } from "react"
-import { connect } from "react-redux"
-import { withRouter } from "react-router-dom"
 
+import PropTypes from "prop-types"
 import { logoutUser } from "../../store/actions"
-
 //redux
 import { useDispatch } from "react-redux"
+import { withRouter } from "react-router-dom"
 
 const Logout = props => {
   const dispatch = useDispatch()

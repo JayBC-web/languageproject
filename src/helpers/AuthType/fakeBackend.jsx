@@ -16,10 +16,10 @@ import axios from "axios"
 let users = [
   {
     uid: 1,
-    username: "admin",
+    username: "Jack",
     role: "admin",
     password: "123456",
-    email: "admin@themesbrand.com",
+    email: "jack@duolearn.com",
   },
 ]
 

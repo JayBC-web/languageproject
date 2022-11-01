@@ -23,7 +23,6 @@ import { Link } from "react-router-dom";
 import logoDark from "../../assets/images/logo-dark.png";
 import logoImg from "../../assets/images/logo.svg";
 // import images
-import profileImg from "../../assets/images/profile-img.png";
 import { useFormik } from "formik";
 
 const Register = (props) => {

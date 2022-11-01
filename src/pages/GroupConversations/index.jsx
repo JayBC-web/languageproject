@@ -27,7 +27,7 @@ const projects = [
     id: 0,
     img: "img1",
     name: "Meaning of life",
-    description: "Let's tak about the meaning of life and somehow push religion into the matter.",
+    description: "Let's tak about the meaning of life and somehow push philosophy degrees into the matter.",
     status: "Space Available",
     color: "success",
     dueDate: "15 Oct, 19",

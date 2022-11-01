@@ -19,10 +19,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import PropTypes from "prop-types";
 import React from "react";
-import logo from "../../assets/images/logo.svg";
 import logoDark from "../../assets/images/logo-dark.png";
 // import images
-import profile from "../../assets/images/profile-img.png";
 import { useFormik } from "formik";
 // action
 import { userForgetPassword } from "../../store/actions";

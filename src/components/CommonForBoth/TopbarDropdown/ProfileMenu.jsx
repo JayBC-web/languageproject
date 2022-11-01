@@ -71,9 +71,9 @@ const ProfileMenu = (props) => {
             <i className="bx bx-wrench font-size-16 align-middle me-1" />
             {props.t("Settings")}
           </DropdownItem>
-          <DropdownItem tag="a" href="auth-lock-screen">
-            <i className="bx bx-lock-open font-size-16 align-middle me-1" />
-            {props.t("Lock screen")}
+          <DropdownItem tag="a" href="/subscriptions">
+            <i className="bx bx-dollar font-size-16 align-middle me-1" />
+            {"Subscriptions"}
           </DropdownItem>
           <div className="dropdown-divider" />
           <Link to="/logout" className="dropdown-item">

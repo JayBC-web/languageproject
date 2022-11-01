@@ -43,25 +43,17 @@ import moment from "moment";
 
 //redux
 
-
 //Import Breadcrumb
-
 
 //Import Scrollbar
 
-
-
-
-
-
-const Chat = props => {
-
+const Chat = (props) => {
   //meta title
   document.title = "Chat | Skote - Vite React Admin & Dashboard Template";
 
   const dispatch = useDispatch();
 
-  const { chats, groups, contacts, messages } = useSelector(state => ({
+  const { chats, groups, contacts, messages } = useSelector((state) => ({
     chats: state.chat.chats,
     groups: state.chat.groups,
     contacts: state.chat.contacts,
@@ -83,7 +75,8 @@ const Chat = props => {
   const [activeTab, setactiveTab] = useState("1");
   const [Chat_Box_Username, setChat_Box_Username] = useState("Steven Franklin");
   // eslint-disable-next-line no-unused-vars
-  const [Chat_Box_User_Status, setChat_Box_User_Status] = useState("Active Now");
+  const [Chat_Box_User_Status, setChat_Box_User_Status] =
+    useState("Active Now");
   const [curMessage, setcurMessage] = useState("");
 
   useEffect(() => {
@@ -114,7 +107,7 @@ const Chat = props => {
     setother_Menu(!other_Menu);
   };
 
-  const toggleTab = tab => {
+  const toggleTab = (tab) => {
     if (activeTab !== tab) {
       setactiveTab(tab);
     }
@@ -145,7 +138,7 @@ const Chat = props => {
     }
   };
 
-  const onKeyPress = e => {
+  const onKeyPress = (e) => {
     const { key, value } = e;
     if (key === "Enter") {
       setcurMessage(value);
@@ -182,7 +175,7 @@ const Chat = props => {
             <Col lg="12">
               <div className="d-lg-flex">
                 <div className="chat-leftsidebar me-lg-4">
-                  <div >
+                  <div>
                     <div className="py-4 border-bottom">
                       <div className="d-flex">
                         <div className="align-self-center me-3">
@@ -283,9 +276,12 @@ const Chat = props => {
                         <TabPane tabId="1">
                           <div>
                             <h5 className="font-size-14 mb-3">Recent</h5>
-                            <ul className="list-unstyled chat-list" id="recent-list">
+                            <ul
+                              className="list-unstyled chat-list"
+                              id="recent-list"
+                            >
                               <PerfectScrollbar style={{ height: "410px" }}>
-                                {map(chats, chat => (
+                                {map(chats, (chat) => (
                                   <li
                                     key={chat.id + chat.status}
                                     className={
@@ -312,18 +308,18 @@ const Chat = props => {
                                               chat.status === "online"
                                                 ? "mdi mdi-circle text-success font-size-10"
                                                 : chat.status === "intermediate"
-                                                  ? "mdi mdi-circle text-warning font-size-10"
-                                                  : "mdi mdi-circle font-size-10"
+                                                ? "mdi mdi-circle text-warning font-size-10"
+                                                : "mdi mdi-circle font-size-10"
                                             }
                                           />
                                         </div>
-                                        {chat.isImg ?
+                                        {chat.isImg ? (
                                           <div className="avatar-xs align-self-center me-3">
                                             <span className="avatar-title rounded-circle bg-primary bg-soft text-primary">
                                               {chat.profile}
                                             </span>
                                           </div>
-                                          :
+                                        ) : (
                                           <div className="align-self-center me-3">
                                             <img
                                               src={chat.image}
@@ -331,7 +327,7 @@ const Chat = props => {
                                               alt=""
                                             />
                                           </div>
-                                        }
+                                        )}
 
                                         <div className="flex-grow-1 overflow-hidden">
                                           <h5 className="text-truncate font-size-14 mb-1">
@@ -358,7 +354,7 @@ const Chat = props => {
                           <ul className="list-unstyled chat-list">
                             <PerfectScrollbar style={{ height: "410px" }}>
                               {groups &&
-                                groups.map(group => (
+                                groups.map((group) => (
                                   <li key={"test" + group.image}>
                                     <Link
                                       to="#"
@@ -397,7 +393,7 @@ const Chat = props => {
                           <div>
                             <PerfectScrollbar style={{ height: "410px" }}>
                               {contacts &&
-                                contacts.map(contact => (
+                                contacts.map((contact) => (
                                   <div
                                     key={"test_" + contact.category}
                                     className={
@@ -411,7 +407,7 @@ const Chat = props => {
                                     </div>
 
                                     <ul className="list-unstyled chat-list">
-                                      {contact.child.map(array => (
+                                      {contact.child.map((array) => (
                                         <li key={"test" + array.id}>
                                           <Link
                                             to="#"
@@ -455,8 +451,8 @@ const Chat = props => {
                                 Chat_Box_User_Status === "Active Now"
                                   ? "mdi mdi-circle text-success align-middle me-2"
                                   : Chat_Box_User_Status === "intermediate"
-                                    ? "mdi mdi-circle text-warning align-middle me-1"
-                                    : "mdi mdi-circle align-middle me-1"
+                                  ? "mdi mdi-circle text-warning align-middle me-1"
+                                  : "mdi mdi-circle align-middle me-1"
                               }
                             />
                             {Chat_Box_User_Status}
@@ -484,12 +480,12 @@ const Chat = props => {
                                           placeholder="Search ..."
                                           aria-label="Recipient's username"
                                         /> */}
-                                        {/* <InputGroupAddon addonType="append"> */}
-                                        {/* <Button color="primary" type="submit">
+                            {/* <InputGroupAddon addonType="append"> */}
+                            {/* <Button color="primary" type="submit">
                                           <i className="mdi mdi-magnify" />
                                         </Button> */}
-                                        {/* </InputGroupAddon> */}
-                                      {/* </InputGroup>
+                            {/* </InputGroupAddon> */}
+                            {/* </InputGroup>
                                     </FormGroup>
                                   </Form>
                                 </DropdownMenu>
@@ -501,7 +497,17 @@ const Chat = props => {
                                 toggle={toggleSettings}
                               >
                                 <DropdownToggle className="btn nav-btn" tag="i">
-                                  <i className="bx bx-cog" />
+                                  <i className="mdi mdi-phone" />
+                                </DropdownToggle>
+                              </Dropdown>
+                            </li>
+                            <li className="list-inline-item  d-none d-sm-inline-block">
+                              <Dropdown
+                                isOpen={settings_Menu}
+                                toggle={toggleSettings}
+                              >
+                                <DropdownToggle className="btn nav-btn" tag="i">
+                                  <i className="mdi mdi-flag" />
                                 </DropdownToggle>
                                 <DropdownMenu>
                                   <DropdownItem href="#">
@@ -515,13 +521,23 @@ const Chat = props => {
                                 </DropdownMenu>
                               </Dropdown>
                             </li>
-                            <li className="list-inline-item">
+                            <li className="list-inline-item  d-none d-sm-inline-block">
+                              <Dropdown
+                                isOpen={settings_Menu}
+                                toggle={toggleSettings}
+                              >
+                                <DropdownToggle className="btn nav-btn" tag="i">
+                                  <i className="mdi mdi-cog" />
+                                </DropdownToggle>
+                              </Dropdown>
+                            </li>
+                            {/* <li className="list-inline-item">
                               <Dropdown
                                 isOpen={other_Menu}
                                 toggle={toggleOther}
                               >
                                 <DropdownToggle className="btn nav-btn" tag="i">
-                                  <i className="bx bx-dots-horizontal-rounded" />
+                                  <i className="mdi mdi-dots-horizontal-rounded" />
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-end">
                                   <DropdownItem href="#">Action</DropdownItem>
@@ -533,7 +549,7 @@ const Chat = props => {
                                   </DropdownItem>
                                 </DropdownMenu>
                               </Dropdown>
-                            </li>
+                            </li> */}
                           </ul>
                         </Col>
                       </Row>
@@ -544,7 +560,7 @@ const Chat = props => {
                         <ul className="list-unstyled">
                           <PerfectScrollbar
                             style={{ height: "470px" }}
-                            containerRef={ref => setMessageBox(ref)}
+                            containerRef={(ref) => setMessageBox(ref)}
                           >
                             <li>
                               <div className="chat-day-title">
@@ -552,7 +568,7 @@ const Chat = props => {
                               </div>
                             </li>
                             {messages &&
-                              map(messages, message => (
+                              map(messages, (message) => (
                                 <li
                                   key={"test_k" + message.id}
                                   className={
@@ -565,12 +581,16 @@ const Chat = props => {
                                     <UncontrolledDropdown>
                                       <DropdownToggle
                                         href="#"
-                                        tag="a" className="dropdown-toggle"
+                                        tag="a"
+                                        className="dropdown-toggle"
                                       >
                                         <i className="bx bx-dots-vertical-rounded" />
                                       </DropdownToggle>
                                       <DropdownMenu>
-                                        <DropdownItem onClick={(e) => copyMsg(e.target)} href="#">
+                                        <DropdownItem
+                                          onClick={(e) => copyMsg(e.target)}
+                                          href="#"
+                                        >
                                           Copy
                                         </DropdownItem>
                                         <DropdownItem href="#">
@@ -579,10 +599,14 @@ const Chat = props => {
                                         <DropdownItem href="#">
                                           Forward
                                         </DropdownItem>
-                                        <DropdownItem onClick={(e) => toggle_deleMsg(e.target)} href="#">
+                                        <DropdownItem
+                                          onClick={(e) =>
+                                            toggle_deleMsg(e.target)
+                                          }
+                                          href="#"
+                                        >
                                           Delete
                                         </DropdownItem>
-
                                       </DropdownMenu>
                                     </UncontrolledDropdown>
                                     <div className="ctext-wrap">
@@ -590,7 +614,10 @@ const Chat = props => {
                                         {message.sender}
                                       </div>
                                       <p>{message.message}</p>
-                                      <p className="chat-time mb-0"><i className="bx bx-time-five align-middle me-1"></i> {message.time}</p>
+                                      <p className="chat-time mb-0">
+                                        <i className="bx bx-time-five align-middle me-1"></i>{" "}
+                                        {message.time}
+                                      </p>
                                     </div>
                                   </div>
                                 </li>
@@ -606,7 +633,7 @@ const Chat = props => {
                                 type="text"
                                 value={curMessage}
                                 onKeyPress={onKeyPress}
-                                onChange={e => setcurMessage(e.target.value)}
+                                onChange={(e) => setcurMessage(e.target.value)}
                                 className="form-control chat-input"
                                 placeholder="Enter Message..."
                               />
@@ -643,7 +670,7 @@ const Chat = props => {
                                   <li className="list-inline-item">
                                     <Link to="#">
                                       <i
-                                        className="bx bx-microphone"
+                                        className="mdi mdi-microphone"
                                         id="Filetooltip"
                                       />
                                       <UncontrolledTooltip

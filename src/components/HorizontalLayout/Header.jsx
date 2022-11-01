@@ -19,7 +19,6 @@ import logoDark from "../../assets/images/logo-dark.png";
 import logoLight from "../../assets/images/logo-light.png";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import mail_chimp from "../../assets/images/brands/mail_chimp.png";
-import megamenuImg from "../../assets/images/megamenu-img.png";
 import slack from "../../assets/images/brands/slack.png";
 // Redux Store
 import { toggleLeftmenu } from "../../store/actions";

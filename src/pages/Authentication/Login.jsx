@@ -13,7 +13,6 @@ import { loginUser } from "../../store/actions";
 import logo from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.png";
 // import images
-import profile from "../../assets/images/profile-img.png";
 import { useFormik } from "formik";
 
 const Login = props => {
@@ -26,7 +25,7 @@ const Login = props => {
     enableReinitialize: true,
 
     initialValues: {
-      email: "admin@themesbrand.com" || '',
+      email: "jack@duolearn.com" || '',
       password: "123456" || '',
     },
     validationSchema: Yup.object({

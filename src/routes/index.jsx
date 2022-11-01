@@ -3,10 +3,13 @@ import Chat from "../pages/Chat";
 import Dashboard from "../pages/Dashboard/index";
 import FindExchanges from "../pages/FindExchanges";
 import ForgetPwd from "../pages/Authentication/ForgetPassword";
+import GoLive from "../pages/GoLive";
 import GroupConversations from "../pages/GroupConversations"
+import Landing from "../pages/Landing";
 // // Authentication related pages
 import Login from "../pages/Authentication/Login";
 import Logout from "../pages/Authentication/Logout";
+import MyJourney from "../pages/MyJourney";
 import Profile from "../pages/Profile/Profile";
 import React from "react";
 import { Redirect } from "react-router-dom";
@@ -27,6 +30,8 @@ const authProtectedRoutes = [
 
   { path: "/find-an-exchange", component: FindExchanges }, 
   { path: "/group-conversations", component: GroupConversations }, 
+  { path: "/go-live", component: GoLive }, 
+  { path: "/my-journey", component: MyJourney}, 
 
 
   //   // this route should be at the end of all other routes
@@ -39,6 +44,7 @@ const publicRoutes = [
   { path: "/login", component: Login },
   { path: "/forgot-password", component: ForgetPwd },
   { path: "/register", component: Register },
+  { path: "/", component: Landing },
 ];
 
 export { authProtectedRoutes, publicRoutes };
