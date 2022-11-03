@@ -17,7 +17,6 @@ import {
 } from "reactstrap";
 import React, {useState} from "react";
 
-//Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -25,13 +24,23 @@ import Rating from "react-rating";
 import img4 from "../../assets/images/small/img-8.webp";
 import img5 from "../../assets/images/small/img-9.jpg";
 import { map } from "lodash";
-//i18n
 import { withTranslation } from "react-i18next";
+
+//Import Breadcrumb
+
+
+
+
+
+
+
+//i18n
+
 
 const userData = [
   {
     id: 1,
-    name: "Jack Conroy",
+    name: "Jack Samuels",
     age: "23",
     location: "Madrid, Spain",
     photo:

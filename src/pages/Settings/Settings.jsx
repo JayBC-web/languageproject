@@ -60,7 +60,7 @@ const Settings = (props) => {
                           <input
                             className="form-control"
                             type="text"
-                            defaultValue="Jack Conroy"
+                            defaultValue="Jack Cohen"
                           />
                         </div>
                       </Row>

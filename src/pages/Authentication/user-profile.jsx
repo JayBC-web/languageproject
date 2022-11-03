@@ -12,11 +12,16 @@ import {
 } from "reactstrap";
 import React, { useState } from "react";
 
-//Import Breadcrumb
 import Breadcrumb from "../../components/Common/Breadcrumb";
 import Select from "react-select";
 import avatar from "../../assets/images/users/avatar-1.jpg";
 import { withRouter } from "react-router-dom";
+
+//Import Breadcrumb
+
+
+
+
 
 const data = {
   intro:
@@ -95,7 +100,7 @@ const UserProfile = (props) => {
                       <Col sx="12" sm="9">
                         <div className="flex-grow-1 align-self-center mb-3">
                           <div>
-                            <h3>Jack Conroy, 30</h3>
+                            <h3>Jack Samuels, 30</h3>
                             <p className="mb-2" style={{ fontSize: "0.9rem" }}>
                               <i className="bx bx-map bx-border-circle" />{" "}
                               Valencia, Spain

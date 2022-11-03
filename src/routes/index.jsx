@@ -44,7 +44,6 @@ const publicRoutes = [
   { path: "/login", component: Login },
   { path: "/forgot-password", component: ForgetPwd },
   { path: "/register", component: Register },
-  { path: "/", component: Landing },
 ];
 
 export { authProtectedRoutes, publicRoutes };
